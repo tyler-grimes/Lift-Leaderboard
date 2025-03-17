@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from . import home
 
 def create_app(test_config=None):
     # create and configure the app
@@ -21,4 +22,5 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    app.register_blueprint(home.bp)
     return app
